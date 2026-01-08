@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sastrería Polo Colmán | Elegancia a Medida</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Un gris muy suave */
+        }
+
+        /* Títulos en Verde Oscuro */
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: #0f3b25; /* CAMBIO: Verde Inglés Profundo */
+        }
+
+        /* --- ENCABEZADO (HEADER) --- */
+        header {
+            background-color: #0f3b25; /* CAMBIO: Fondo Verde */
+            color: #d4af37; /* Dorado */
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 3px solid #d4af37; /* Línea dorada decorativa */
+        }
+
+        header h1 {
+            color: #d4af37;
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 5px;
+            color: #ddd;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #d4af37; /* Dorado al pasar el mouse */
+        }
+
+        /* --- SECCIÓN HERO (PRINCIPAL) --- */
+        .hero {
+            /* He buscado una imagen más oscura que contraste bien con el verde */
+            background: linear-gradient(rgba(15, 59, 37, 0.7), rgba(15, 59, 37, 0.5)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #0f3b25; /* Texto verde sobre botón dorado */
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 2px; /* Bordes menos redondeados para más seriedad */
+            margin-top: 25px;
+            border: 1px solid #d4af37;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+        }
+
+        /* --- SECCIONES COMUNES --- */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        /* --- SERVICIOS --- */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .servicio-card {
+            background: white;
+            padding: 40px 20px;
+            border-top: 4px solid #0f3b25; /* Detalle verde superior */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- PIE DE PÁGINA (FOOTER) --- */
+        footer {
+            background-color: #0f3b25; /* Fondo Verde */
+            color: #ccc;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 5px solid #d4af37;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        /* --- BOTÓN FLOTANTE DE WHATSAPP (Versión Icono) --- */
+        .btn-wsp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%; /* Esto lo hace redondo */
+            width: 60px;        /* Ancho del círculo */
+            height: 60px;       /* Alto del círculo */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centra el icono */
+            font-size: 2rem;    /* Tamaño del icono */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-wsp:hover {
+            transform: scale(1.1);
+            background-color: #1ebc57;
+        }
+        /* Estilos para el Logo */
+        .main-logo {
+            max-width: 180px; /* Ancho máximo ideal para logos redondos */
+            height: auto;     /* Mantiene la proporción */
+            display: block;
+            margin: 0 auto;   /* Lo centra perfectamente */
+            
+        }
+        
+        /* Ajuste para móviles */
+        @media (max-width: 600px) {
+            .main-logo {
+                max-width: 140px; /* Un poco más chico en celulares */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo Polo Colmán" class="main-logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#historia">La Casa</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Elegancia Atemporal</h2>
+        <p>Donde la tradición se encuentra con su estilo personal.</p>
+        <a href="#contacto" class="btn">Solicitar Asesoramiento</a>
+    </section>
+
+    <section id="servicios" class="container">
+        <h2>Excelencia en cada puntada</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: #666;">
+            Utilizamos técnicas artesanales perfeccionadas durante décadas para garantizar un ajuste que ninguna máquina puede replicar.
+        </p>
+        
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <span class="icon">✂️</span>
+                <h3>Trajes Bespoke</h3>
+                <p>El pináculo de la sastrería. Patrones creados desde cero exclusivamente para sus medidas y postura.</p>
+            </div>
+            <div class="servicio-card">
+                <span class="icon">🧵</span>
+                <h3>Ajustes Maestros</h3>
+                <p>Refinamos sus prendas existentes. Un buen traje debe sentirse como una segunda piel.</p>
+            </div>
+            <div class="servicio-card">
+                <span class="icon">👔</span>
+                <h3>Etiqueta y Ceremonia</h3>
+                <p>Smokings, chaqués y frac para los momentos más importantes de su vida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="container" style="background-color: #fff;">
+        <div style="border: 2px solid #d4af37; padding: 40px; display: inline-block;">
+            <h2>El Legado Colmán</h2>
+            <p>En el corazón de nuestro taller, el tiempo se detiene. Respetamos los tiempos que requiere la calidad.</p>
+            <p>Con el verde de nuestra marca representamos la frescura de nuestros cortes y la esperanza de una elegancia renovada, siempre en armonía con los estándares de oro de la vieja escuela.</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="container" style="background-color: #f4f4f4;">
+        <h2>Hablemos de su próximo traje</h2>
+        <p>Visítenos para una toma de medidas sin compromiso.</p>
+        <br>
+        <div style="background: white; padding: 30px; max-width: 500px; margin: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <p><strong>📍 Dirección:</strong> Calle de la Moda 123, Ciudad</p>
+            <p><strong>📞 Teléfono:</strong> (555) 123-4567</p>
+            <p><strong>✉️ Email:</strong> contacto@polocolman.com</p>
+            <a href="mailto:contacto@polocolman.com" class="btn">Agendar Cita</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sastrería Polo Colmán.</p>
+        <p>Arte y confección.</p>
+    </footer>
+    <a href="https://wa.me/5491155297055?text=Hola,%20quisiera%20consultar%20por%20un%20traje." class="btn-wsp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</body>
+</html>
